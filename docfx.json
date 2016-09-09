@@ -46,14 +46,6 @@
       }
     ],
     "xref": ["xref/xrefmap.zip"],
-    "globalMetadata": {
-      "_enableSearch": true
-    },
-    "fileMetadata": {
-      "_homepage": {
-        "index.md": true
-      }
-    },
     "dest": "_site",
     "template": ["template"],
     "noLangKeyword": false
