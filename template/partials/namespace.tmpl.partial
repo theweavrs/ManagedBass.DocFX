@@ -1,24 +1,20 @@
-{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
-
+# {{>partials/title}}
 {{^_disableContribution}}
 {{#docurl}}
-<a href="{{docurl}}" title="{{__global.improveThisDoc}}" class="fab btn-warning pull-right mobile-hide"><i class="glyphicon glyphicon-pencil"></i></a>
+[{{__global.improveThisDoc}}]({{docurl}})
 {{/docurl}}
 {{/_disableContribution}}
-<h1 id="{{id}}" data-uid="{{uid}}">{{>partials/title}}</h1>
-<div class="markdown level0 summary">{{{summary}}}</div>
-<div class="markdown level0 remarks">{{{remarks}}}</div>
-<div class="markdown level0 conceptual">{{{conceptual}}}</div>
+
+{{{summary}}}
+
+{{{remarks}}}
+
+{{{conceptual}}}
+
 {{#children}}
-  <h3 id="{{id}}">{{>partials/namespaceSubtitle}}</h3>
-  <table>
+## {{>partials/namespaceSubtitle}}
   {{#children}}
-    <tr>
-      <td>
-        {{{specName.0.value}}}
-        <p class="padTop">{{{summary}}}</p>
-      </td>
-    </tr>
+### {{{specName.0.value}}}
+{{{summary}}}
   {{/children}}
-  </table>
 {{/children}}
