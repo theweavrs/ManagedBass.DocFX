@@ -26,8 +26,10 @@ namespace ManagedBass
     {
         public async void LoadAsync(string FileName)
         {
-            // Request permission to access file.
-            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(FileName);
+            // Create a StorageFile.
+            Windows.Storage.StorageFile file_to_play = await Windows.Storage.StorageFile.GetFileFromPathAsync(FileName);
+            // Request permission to access the created StorageFile.
+            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(file_to_play);
 
             // Load file asynchronously.
             await Task.Run(() => Load(FileName));
